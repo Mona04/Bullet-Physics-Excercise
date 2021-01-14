@@ -19,14 +19,14 @@ void main()
 	tmp->mass = 0.0f;
 	tmp->AddToWorld();
 	
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < 300; i++)
 	{
 		Timer::Get()->Update();
 		Physics_World::Get()->Update();
 
 		for (auto& rigidBody : rigidBodys)
 		{
-			rigidBody->ApplyForce(btVector3(1.0f, 0.0f, 0.0f));
+			rigidBody->ApplyForce(btVector3(-1.0f, 0.0f, 0.0f));
 			D3DXVECTOR3 force = ToD3DXVector3(rigidBody->rigidBody->getTotalForce());
 			std::cout << "Total Force wa : " << force.x << " " << force.y << " " << force.z << std::endl;;
 		}

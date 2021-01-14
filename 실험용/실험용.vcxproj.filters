@@ -16,11 +16,11 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Physics\Physics_World.h" />
     <ClInclude Include="Physics\Physics_Helper.h" />
-    <ClInclude Include="Physics\Physics_MotionState.h" />
     <ClInclude Include="Physics\Physics_RigidBody.h" />
     <ClInclude Include="Util\FileStream.h" />
     <ClInclude Include="Util\FileSystem.h" />
     <ClInclude Include="Util\Timer.h" />
     <ClInclude Include="Util\Math_Helper.h" />
+    <ClInclude Include="Physics\Physics_MotionState.h" />
   </ItemGroup>
 </Project>

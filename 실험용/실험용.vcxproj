@@ -34,8 +34,8 @@
     <ClCompile Include="실험용.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Util\Math_Helper.h" />
     <ClInclude Include="Physics\Physics_MotionState.h" />
+    <ClInclude Include="Util\Math_Helper.h" />
     <ClInclude Include="Physics\Physics_RigidBody.h" />
     <ClInclude Include="Physics\Physics_World.h" />
     <ClInclude Include="Physics\Physics_Helper.h" />

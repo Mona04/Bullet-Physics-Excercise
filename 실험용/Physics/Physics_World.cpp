@@ -8,6 +8,8 @@
 #include <BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h>
 #pragma pop(pop)
 
+
+
 #define GRAVITY btVector3(0.0f, -9.81f, 0.0f)
 
 Physics_World::Physics_World()
@@ -23,6 +25,12 @@ Physics_World::Physics_World()
 	world->getDispatchInfo().m_useContinuous = true;
 	world->getSolverInfo().m_splitImpulse = false;
 	world->getSolverInfo().m_numIterations = 256;
+
+	debugDraw = new PhysicsDebugDraw();
+	world->setDebugDrawer(debugDraw);
+
+	filterCB = new PhysicsFilterCallback();
+	world->getPairCache()->setOverlapFilterCallback(filterCB);
 }
 
 Physics_World::~Physics_World()
@@ -32,6 +40,8 @@ Physics_World::~Physics_World()
 	SAFE_DELETE(broadphase);
 	SAFE_DELETE(dispatcher);
 	SAFE_DELETE(collisionConfiguration);
+	SAFE_DELETE(debugDraw);
+	SAFE_DELETE(filterCB);
 }
 
 void Physics_World::Update()

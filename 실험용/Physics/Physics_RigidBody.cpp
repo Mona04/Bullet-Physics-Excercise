@@ -85,7 +85,9 @@ void RigidBody::AddToWorld()
 	rigidBody->setLinearVelocity(btVector3(0.0f, 0.0f, 0.0f));
 	rigidBody->setAngularVelocity(btVector3(0.0f, 0.0f, 0.0f));
 	
-	Physics_World::Get()->GetWorld()->addRigidBody(rigidBody);
+	static int s = 0;
+	//Physics_World::Get()->GetWorld()->addRigidBody(rigidBody); // 충돌 함
+	Physics_World::Get()->GetWorld()->addRigidBody(rigidBody, 1, s++);  // 충돌 안함
 
 }
 

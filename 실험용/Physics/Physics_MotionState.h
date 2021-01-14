@@ -32,6 +32,7 @@ public:
 
 		D3DXVECTOR3 position = rigidBody->position;
 		D3DXQUATERNION quarternion = rigidBody->rotation;
+		// No Scale.  Scale should be implemented in collision shape
 
 		rigidBody->Print();
 		//rigidBody->SetHasSimulated(true);
