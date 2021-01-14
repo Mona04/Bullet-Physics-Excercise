@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="macro.props" />
-    <None Include="temp.dat" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Physics\Physics_RigidBody.cpp" />
