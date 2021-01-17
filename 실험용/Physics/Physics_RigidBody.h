@@ -16,6 +16,7 @@ public:
 public:
 	class btCollisionShape* collisionShape;
 	class btRigidBody* rigidBody;
+	class MotionState* motionState;
 
 	D3DXVECTOR3 position;
 	D3DXQUATERNION rotation;

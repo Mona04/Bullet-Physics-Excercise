@@ -16,6 +16,7 @@ RigidBody::RigidBody(const D3DXVECTOR3& pos, const D3DXQUATERNION& quat, const D
 
 RigidBody::~RigidBody()
 {
+	SAFE_DELETE(motionState);
 	SAFE_DELETE(collisionShape);
 	if (rigidBody)
 	{
@@ -41,7 +42,7 @@ void RigidBody::AddToWorld()
 	SetCollisionShape();
 
 	// Make rigidBody
-	MotionState* motionState = new MotionState(this);
+	motionState = new MotionState(this);
 
 	btRigidBody::btRigidBodyConstructionInfo constructionInfo(mass, motionState, collisionShape, localInertia);
 	constructionInfo.m_motionState = motionState;

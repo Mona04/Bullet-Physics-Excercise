@@ -55,6 +55,7 @@ void Physics_World::Update()
 	max_substeps = max_substeps > 1 ? max_substeps : 1;  // timeStep < maxSubSteps * fixedTimeStep
 
 	world->stepSimulation(delta_time, max_substeps, internal_time_step);
+	//world->debugDrawWorld();
 }
 
 btVector3 Physics_World::GetGravity()
